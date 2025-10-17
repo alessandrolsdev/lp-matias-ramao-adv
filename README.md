@@ -1,17 +1,5 @@
-# Landing Page - Matias Ramão Advocacia
+# Vue 3 + TypeScript + Vite
 
-Projeto de desenvolvimento da Landing Page para o advogado Adiler Matias Ramão. O objetivo é criar uma presença digital de alta performance focada em captação de clientes.
+This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
-## 🚀 Stack de Tecnologia
-
-- **Framework:** Vue 3 (Composition API)
-- **Linguagem:** TypeScript
-- **Build Tool:** Vite
-- **Estilização:** Tailwind CSS
-- **Hospedagem:** Vercel / Netlify
-
-## 💻 Rodando o Projeto Localmente
-
-1. Clone o repositório:
-   ```bash
-   git clone [URL_DO_SEU_REPOSITORIO]
+Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
