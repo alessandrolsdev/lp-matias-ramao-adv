@@ -1,5 +1,6 @@
 <script setup lang="ts">
-// Lógica do componente (se necessária no futuro)
+// Importa a imagem do Matias para a seção 'Sobre'.
+import matiasProfileImage from '../assets/images/matias-perfil.jpg'; 
 </script>
 
 <template>
@@ -7,9 +8,11 @@
     <div class="container mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div class="flex justify-center">
-          <div class="w-80 h-96 bg-gray-700 rounded-lg shadow-lg flex items-center justify-center">
-            <span class="text-gray-400">Imagem do Matias</span>
-          </div>
+          <img
+            :src="matiasProfileImage"
+            alt="Foto de perfil do advogado Matias Ramão"
+            class="w-80 h-96 object-cover rounded-lg shadow-lg"
+          />
         </div>
 
         <div>
@@ -25,3 +28,7 @@
     </div>
   </section>
 </template>
+
+<style scoped>
+/* Estilos específicos, se houver, vão aqui. */
+</style>
