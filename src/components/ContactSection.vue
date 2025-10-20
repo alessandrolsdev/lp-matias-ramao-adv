@@ -1,48 +1,12 @@
 <script setup lang="ts">
-// Importamos 'ref' do Vue para criar variáveis reativas.
-// Uma variável reativa é aquela que, quando seu valor muda, a interface do usuário é atualizada automaticamente.
-import { ref } from 'vue';
-
-// Criamos variáveis reativas para cada campo do nosso formulário.
-// 'ref('')' inicializa a variável com uma string vazia.
-// O TypeScript infere que estas são referências de string: Ref<string>.
-const nome = ref('');
-const emailOuTelefone = ref('');
-const mensagem = ref('');
-
-// Esta é a função que será chamada quando o formulário for enviado.
-// Por enquanto, ela apenas exibirá os dados no console do navegador e limpará os campos.
-// No futuro, é aqui que conectaríamos a um backend ou serviço de e-mail (como Formspree, Netlify Forms, etc.).
-function handleSubmit() {
-  // Verificação básica para não enviar formulário vazio.
-  if (!nome.value || !mensagem.value) {
-    alert('Por favor, preencha pelo menos o nome e a mensagem.');
-    return;
-  }
-
-  // Monta o objeto com os dados do formulário.
-  const dadosDoFormulario = {
-    nome: nome.value,
-    contato: emailOuTelefone.value,
-    mensagem: mensagem.value,
-  };
-
-  // Exibe os dados no console do desenvolvedor (pressione F12 no navegador para ver).
-  console.log('Dados do formulário a serem enviados:', dadosDoFormulario);
-  alert('Mensagem enviada com sucesso! (Simulação)');
-
-  // Limpa os campos do formulário após o envio.
-  nome.value = '';
-  emailOuTelefone.value = '';
-  mensagem.value = '';
-}
+// Nenhuma lógica de formulário é necessária aqui.
 </script>
 
 <template>
   <section id="contato" class="w-full bg-black text-white py-16 md:py-24">
     <div class="container mx-auto px-4">
       <div class="text-center mb-12">
-        <h2 class="text-4xl font-bold text-[#B08D57]">Dê o Próximo Passo</h2>
+        <h2 class="text-4xl font-bold text-gold">Dê o Próximo Passo</h2>
         <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-300">
           Estou pronto para ouvir sobre seu desafio e construir uma estratégia jurídica sob medida para você.
         </p>
@@ -58,7 +22,7 @@ function handleSubmit() {
           <div class="mt-8">
             <a
               href="https://wa.me/5567981376840" target="_blank" rel="noopener noreferrer"  
-              class="inline-block bg-[#B08D57] text-black font-bold py-3 px-8 rounded-lg text-lg hover:bg-opacity-90 transition-all duration-300 ease-in-out hover:scale-105"
+              class="inline-block bg-gold text-black font-bold py-3 px-8 rounded-lg text-lg transition-all duration-300 ease-in-out hover:scale-105"
             >
               Iniciar Conversa via WhatsApp
             </a>
@@ -66,28 +30,35 @@ function handleSubmit() {
         </div>
 
         <div>
-          <form @submit.prevent="handleSubmit" class="space-y-6">
+          <form name="contato" data-netlify="true" data-netlify-honeypot="bot-field">
+            
+            <p class="hidden">
+              <label>
+                Não preencha isto se você for humano: <input name="bot-field" />
+              </label>
+            </p>
+
             <div>
               <label for="nome" class="block text-sm font-medium text-gray-300">Seu Nome</label>
-              <input v-model="nome" type="text" id="nome" required
-                     class="mt-1 block w-full bg-gray-800 border border-gray-700 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-[#B08D57]">
+              <input type="text" id="nome" name="nome" required
+                     class="mt-1 block w-full bg-gray-800 border border-gray-700 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-gold">
             </div>
 
-            <div>
+            <div class="mt-6">
               <label for="contato" class="block text-sm font-medium text-gray-300">Seu E-mail ou Telefone</label>
-              <input v-model="emailOuTelefone" type="text" id="contato"
-                     class="mt-1 block w-full bg-gray-800 border border-gray-700 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-[#B08D57]">
+              <input type="text" id="contato" name="contato"
+                     class="mt-1 block w-full bg-gray-800 border border-gray-700 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-gold">
             </div>
 
-            <div>
+            <div class="mt-6">
               <label for="mensagem" class="block text-sm font-bold text-gray-300">Descreva seu caso e eu retornarei com uma estratégia para a solução</label>
-              <textarea v-model="mensagem" id="mensagem" rows="5" required
-                        class="mt-1 block w-full bg-gray-800 border border-gray-700 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-[#B08D57]"></textarea>
+              <textarea id="mensagem" name="mensagem" rows="5" required
+                        class="mt-1 block w-full bg-gray-800 border border-gray-700 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-gold"></textarea>
             </div>
 
-            <div>
+            <div class="mt-6">
               <button type="submit"
-                      class="w-full bg-[#B08D57] text-black font-bold py-3 px-6 rounded-lg text-lg hover:bg-opacity-90 transition-all duration-300 ease-in-out hover:scale-105">
+                      class="w-full bg-gold text-black font-bold py-3 px-6 rounded-lg text-lg transition-all duration-300 ease-in-out hover:scale-105">
                 Enviar para Análise
               </button>
             </div>
@@ -99,5 +70,5 @@ function handleSubmit() {
 </template>
 
 <style scoped>
-/* Nenhum estilo extra necessário. */
+/* Nenhum estilo precisa ser mudado */
 </style>

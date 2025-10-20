@@ -1,13 +1,36 @@
 <script setup lang="ts">
-// Importa a imagem do Matias para a seção 'Sobre'.
-import matiasProfileImage from '../assets/images/matias-perfil.jpg'; 
+// Importamos a foto de perfil
+import matiasProfileImage from '../assets/images/matias-perfil.jpg'; // <-- Verifique se o nome do arquivo está correto!
+
+// Importamos a lógica de animação
+import { ref } from 'vue';
+import { useIntersectionObserver } from '@vueuse/core';
+
+const sectionRef = ref(null);
+const isVisible = ref(false);
+
+const { stop } = useIntersectionObserver(
+  sectionRef,
+  ([{ isIntersecting }]) => {
+    if (isIntersecting) {
+      isVisible.value = true; 
+      stop(); 
+    }
+  },
+  { threshold: 0.1 }
+);
 </script>
 
 <template>
-  <section class="w-full bg-gray-900 text-white py-16 md:py-24">
+  <section
+    ref="sectionRef"
+    :class="{ 'is-visible': isVisible }"
+    class="w-full bg-gray-900 text-white py-16 md:py-24 relative z-20"
+  >
     <div class="container mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        <div class="flex justify-center">
+        
+        <div class="flex justify-center image-col -mt-44">
           <img
             :src="matiasProfileImage"
             alt="Foto de perfil do advogado Matias Ramão"
@@ -15,8 +38,12 @@ import matiasProfileImage from '../assets/images/matias-perfil.jpg';
           />
         </div>
 
-        <div>
-          <h2 class="text-4xl font-bold text-[#B08D57]">Minha Jornada</h2>
+        <div class="text-col relative z-10">
+          
+          <h2 class="text-4xl font-bold -mt-[7.75rem] text-shadow-custom">
+            Minha Jornada
+          </h2>
+
           <p class="mt-6 text-lg text-gray-300 leading-relaxed">
             Minha história começa na periferia, em uma família sem muitos recursos, mas com grandes sonhos. Há 10 anos, um encontro com Jesus Cristo transformou radicalmente minha perspectiva e me deu um propósito claro: lutar por justiça e servir com integridade.
           </p>
@@ -30,5 +57,32 @@ import matiasProfileImage from '../assets/images/matias-perfil.jpg';
 </template>
 
 <style scoped>
+/* As animações de entrada (fade-in) */
+.image-col {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.9s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
 
+.text-col {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.9s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-delay: 200ms; 
+}
+
+.is-visible .image-col,
+.is-visible .text-col {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* O "Padrão Ouro": Face Dourada, Borda Preta */
+.text-shadow-custom {
+  color: #B08D57;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #000;
+  paint-order: stroke fill;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6);
+}
 </style>
