@@ -58,7 +58,7 @@ function handleSubmit() {
           <div class="mt-8">
             <a
               href="#"  
-              class="inline-block bg-[#B08D57] text-black font-bold py-3 px-8 rounded-lg text-lg hover:bg-opacity-90 transition-colors"
+              class="inline-block bg-[#B08D57] text-black font-bold py-3 px-8 rounded-lg text-lg hover:bg-opacity-90 transition-all duration-300 ease-in-out hover:scale-105"
             >
               Iniciar Conversa via WhatsApp
             </a>
@@ -87,7 +87,7 @@ function handleSubmit() {
 
             <div>
               <button type="submit"
-                      class="w-full bg-[#B08D57] text-black font-bold py-3 px-6 rounded-lg text-lg hover:bg-opacity-90 transition-colors">
+                      class="w-full bg-[#B08D57] text-black font-bold py-3 px-6 rounded-lg text-lg hover:bg-opacity-90 transition-all duration-300 ease-in-out hover:scale-105">
                 Enviar para Análise
               </button>
             </div>

@@ -11,7 +11,7 @@ import matiasProfileImage from '../assets/images/matias-perfil.jpg';
           <img
             :src="matiasProfileImage"
             alt="Foto de perfil do advogado Matias Ramão"
-            class="w-80 h-96 object-cover rounded-lg shadow-lg"
+            class="w-80 h-96 object-cover rounded-lg shadow-lg transition-transform duration-300 ease-in-out hover:scale-105"
           />
         </div>
 
@@ -30,5 +30,5 @@ import matiasProfileImage from '../assets/images/matias-perfil.jpg';
 </template>
 
 <style scoped>
-/* Estilos específicos, se houver, vão aqui. */
+
 </style>

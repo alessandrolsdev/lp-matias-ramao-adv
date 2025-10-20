@@ -1,7 +1,6 @@
 <script setup lang="ts">
 // Importa a imagem do Matias que será usada no fundo ou ao lado do texto.
-// Ao importar a imagem assim, o Vite/Webpack a processa e te dá um URL otimizado.
-import matiasHeroImage from '../assets/images/matias-hero.jpg'; // Altere o nome do arquivo se for diferente
+import matiasHeroImage from '../assets/images/matias-hero.jpg'; 
 </script>
 
 <template>
@@ -21,7 +20,7 @@ import matiasHeroImage from '../assets/images/matias-hero.jpg'; // Altere o nome
           <div class="mt-8">
             <a
               href="#"   
-              class="inline-block bg-[#B08D57] text-black font-bold py-3 px-8 rounded-lg text-lg hover:bg-opacity-90 transition-colors"
+              class="inline-block bg-[#B08D57] text-black font-bold py-3 px-8 rounded-lg text-lg hover:bg-opacity-90 transition-all duration-300 ease-in-out hover:scale-105"
             >
               Solicitar Análise Estratégica
             </a>
@@ -32,7 +31,7 @@ import matiasHeroImage from '../assets/images/matias-hero.jpg'; // Altere o nome
           <img
             :src="matiasHeroImage"
             alt="Matias Ramão palestrando para jovens"
-            class="max-h-[70vh] w-auto object-cover rounded-lg shadow-2xl transform hover:scale-105 transition-transform duration-300"
+            class="max-h-[70vh] w-auto object-cover rounded-lg shadow-2xl transform hover:scale-105 transition-transform duration-300 ease-in-out hover:scale-105"
           />
         </div>
       </div>

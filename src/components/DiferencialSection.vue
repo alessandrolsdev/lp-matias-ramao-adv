@@ -12,21 +12,21 @@
       </p>
 
       <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-gray-900 p-8 rounded-lg border border-gray-700">
+        <div class="bg-gray-900 p-8 rounded-lg border border-gray-700 transition-all duration-300 ease-in-out border-2 border-transparent hover:scale-105 hover:border-[#B08D57] hover:shadow-2xl">
           <h3 class="text-2xl font-bold">Visão 360°</h3>
           <p class="mt-4 text-gray-400">
             Análise completa que integra os aspectos jurídicos e as metas de negócio da sua empresa, garantindo decisões mais seguras e rentáveis.
           </p>
         </div>
 
-        <div class="bg-gray-900 p-8 rounded-lg border border-gray-700">
+        <div class="bg-gray-900 p-8 rounded-lg border border-gray-700 transition-all duration-300 ease-in-out border-2 border-transparent hover:scale-105 hover:border-[#B08D57] hover:shadow-2xl">
           <h3 class="text-2xl font-bold">Soluções Proativas</h3>
           <p class="mt-4 text-gray-400">
             Em vez de apenas remediar problemas, meu foco é antecipar riscos e estruturar sua operação para evitar litígios e otimizar resultados.
           </p>
         </div>
 
-        <div class="bg-gray-900 p-8 rounded-lg border border-gray-700">
+        <div class="bg-gray-900 p-8 rounded-lg border border-gray-700 transition-all duration-300 ease-in-out border-2 border-transparent hover:scale-105 hover:border-[#B08D57] hover:shadow-2xl">
           <h3 class="text-2xl font-bold">Comunicação Clara</h3>
           <p class="mt-4 text-gray-400">
             Tradução do "juridiquês" para uma linguagem de negócios objetiva, permitindo que você compreenda cada passo e tome as melhores decisões.
