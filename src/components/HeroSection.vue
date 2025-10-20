@@ -15,11 +15,11 @@ import matiasHeroImage from '../assets/images/matias-hero.jpg';
             A assessoria completa para sua visão.
           </h1>
           <p class="mt-6 text-lg md:text-xl text-gray-300">
-            Unindo a solidez do Direito Urbanístico a uma visão de negócios de MBA, ofereço a segurança jurídica que seu patrimônio e empreendimento precisam para prosperar.
+            Unindo a expertise em Direito do Consumidor a uma visão de negócios de MBA, ofereço a estratégia jurídica ideal para a sua causa, seja você consumidor ou empresário.          
           </p>
           <div class="mt-8">
             <a
-              href="#"   
+              href="https://wa.me/5567981376840" target="_blank" rel="noopener noreferrer"    
               class="inline-block bg-[#B08D57] text-black font-bold py-3 px-8 rounded-lg text-lg hover:bg-opacity-90 transition-all duration-300 ease-in-out hover:scale-105"
             >
               Solicitar Análise Estratégica

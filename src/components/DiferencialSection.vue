@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// Por enquanto, não precisamos de nenhuma lógica complexa aqui, mas o bloco está pronto para o futuro.
+
 </script>
 
 <template>
@@ -15,21 +15,21 @@
         <div class="bg-gray-900 p-8 rounded-lg border border-gray-700 transition-all duration-300 ease-in-out border-2 border-transparent hover:scale-105 hover:border-[#B08D57] hover:shadow-2xl">
           <h3 class="text-2xl font-bold">Visão 360°</h3>
           <p class="mt-4 text-gray-400">
-            Análise completa que integra os aspectos jurídicos e as metas de negócio da sua empresa, garantindo decisões mais seguras e rentáveis.
+            Compreensão única de ambos os lados da relação de consumo. Meu MBA permite entender a lógica empresarial, e meu foco no CDC me permite defender os direitos do consumidor com total precisão.
           </p>
         </div>
 
         <div class="bg-gray-900 p-8 rounded-lg border border-gray-700 transition-all duration-300 ease-in-out border-2 border-transparent hover:scale-105 hover:border-[#B08D57] hover:shadow-2xl">
-          <h3 class="text-2xl font-bold">Soluções Proativas</h3>
+          <h3 class="text-2xl font-bold">Advocacia Estratégica</h3>
           <p class="mt-4 text-gray-400">
-            Em vez de apenas remediar problemas, meu foco é antecipar riscos e estruturar sua operação para evitar litígios e otimizar resultados.
+            Para consumidores, busco a reparação justa de forma ágil. Para empresas, atuo na consultoria preventiva, adequando suas práticas para evitar litígios e fortalecer a relação com o cliente.
           </p>
         </div>
 
         <div class="bg-gray-900 p-8 rounded-lg border border-gray-700 transition-all duration-300 ease-in-out border-2 border-transparent hover:scale-105 hover:border-[#B08D57] hover:shadow-2xl">
           <h3 class="text-2xl font-bold">Comunicação Clara</h3>
           <p class="mt-4 text-gray-400">
-            Tradução do "juridiquês" para uma linguagem de negócios objetiva, permitindo que você compreenda cada passo e tome as melhores decisões.
+            Tradução do "juridiquês" para uma linguagem objetiva, permitindo que você compreenda cada passo e tome as melhores decisões para sua causa.
           </p>
         </div>
       </div>
@@ -38,5 +38,5 @@
 </template>
 
 <style scoped>
-/* Por enquanto, o Tailwind está cuidando de 100% do nosso estilo. Deixamos aqui para o futuro. */
+
 </style>
