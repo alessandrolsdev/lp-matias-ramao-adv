@@ -1,20 +1,24 @@
 <script setup lang="ts">
 // Importa a imagem do Matias que será usada no fundo ou ao lado do texto.
-import matiasHeroImage from '../assets/images/matias-hero.jpg'; 
+import matiasHeroImage from '../assets/images/matias-hero.jpg';
+import VueFeather from 'vue-feather'; 
 </script>
 
 <template>
   <section class="w-full bg-black text-white min-h-screen relative overflow-hidden">
     <div class="absolute inset-0 bg-black opacity-70 z-0"></div>
 
-    <div class="container mx-auto px-4 h-full relative z-10 flex items-center py-16 md:py-0">
+    <div class="container mx-auto px-4 h-full relative z-10 flex items-center py-24 sm:py-32 md:py-0">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center w-full">
         <div class="text-center md:text-left">
-          <h1 class="text-5xl md:text-6xl font-bold leading-tight text-[#B08D57]">
+          <div class="flex justify-center md:justify-start mb-6"> 
+            <vue-feather type="shield" size="48" class="text-gold"></vue-feather> 
+          </div>
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-[#B08D57]">
             Direito, Negócios e Princípios.<br>
             A assessoria completa para sua visão.
           </h1>
-          <p class="mt-6 text-lg md:text-xl text-gray-300">
+          <p class="text-base sm:text-lg md:text-xl text-gray-300">
             Unindo a expertise em Direito do Consumidor a uma visão de negócios de MBA, ofereço a estratégia jurídica ideal para a sua causa, seja você consumidor ou empresário.          
           </p>
           <div class="mt-8">

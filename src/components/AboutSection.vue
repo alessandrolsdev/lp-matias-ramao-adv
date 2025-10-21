@@ -30,7 +30,7 @@ const { stop } = useIntersectionObserver(
     <div class="container mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         
-        <div class="flex justify-center image-col -mt-44">
+        <div class="flex justify-center image-col md:-mt-44">
           <img
             :src="matiasProfileImage"
             alt="Foto de perfil do advogado Matias Ramão"
@@ -38,9 +38,9 @@ const { stop } = useIntersectionObserver(
           />
         </div>
 
-        <div class="text-col relative z-10">
+        <div class="mt-8 md:mt-0 relative z-10">
           
-          <h2 class="text-4xl font-bold -mt-[7.75rem] text-shadow-custom">
+          <h2 class="text-4xl font-bold md:-mt-[7.75rem] text-shadow-custom">
             Minha Jornada
           </h2>
 
