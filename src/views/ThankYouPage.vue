@@ -22,7 +22,7 @@ import VueFeather from 'vue-feather';
 
     <div class="flex gap-6">
       <a
-        href="#" target="_blank"
+        href="https://www.instagram.com/matiasramao" target="_blank"
         rel="noopener noreferrer"
         aria-label="Link para o Instagram do Dr. Matias Ramão"
         class="text-gray-400 transition-colors duration-300 hover:text-gold"
@@ -31,8 +31,8 @@ import VueFeather from 'vue-feather';
       </a>
 
       <a
-        href="#" target="_blank"
-        rel="noopener noreferrer"
+        href="https://www.linkedin.com/in/matias-ramão-083883144" target="_blank"
+          rel="noopener noreferrer"
         aria-label="Link para o LinkedIn do Dr. Matias Ramão"
         class="text-gray-400 transition-colors duration-300 hover:text-gold"
       >

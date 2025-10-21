@@ -40,7 +40,7 @@ const showInvalidIcon = computed(() => {
           </p>
           <div class="mt-8">
             <a
-              href="#" target="_blank"
+              href="https://wa.me/5567981376840" target="_blank" 
               rel="noopener noreferrer"
               class="inline-block bg-[#B08D57] text-black font-bold py-3 px-8 rounded-lg text-lg transition-all duration-300 ease-in-out hover:scale-105"
             >
@@ -138,5 +138,5 @@ const showInvalidIcon = computed(() => {
 </template>
 
 <style scoped>
-/* Nenhum estilo precisa ser mudado */
+
 </style>
