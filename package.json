@@ -10,9 +10,11 @@
     "tailwind:init": "tailwindcss init -p"
   },
   "dependencies": {
+    "@ssibrahimbas/v-mask": "^1.0.0",
     "@vueuse/core": "^13.9.0",
     "vue": "^3.4.21",
-    "vue-feather": "^2.0.0"
+    "vue-feather": "^2.0.0",
+    "vue-router": "^4.6.3"
   },
   "devDependencies": {
     "@types/node": "^20.12.12",

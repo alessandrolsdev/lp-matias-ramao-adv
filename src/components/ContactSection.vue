@@ -1,5 +1,24 @@
 <script setup lang="ts">
-// Nenhuma lógica de formulário é necessária aqui.
+import { ref, computed } from 'vue';
+import VueFeather from 'vue-feather';
+
+// Refs de estado para os campos
+const telefone = ref('');
+const email = ref('');
+// 1. MUDANÇA: Adicionamos uma ref para a mensagem
+const mensagem = ref('');
+// 2. MUDANÇA: Definimos o limite máximo como uma constante
+const maxMensagemLength = 1000;
+
+// Lógica de validação do E-mail
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const isEmailValid = computed(() => {
+  return emailRegex.test(email.value);
+});
+const showValidIcon = computed(() => isEmailValid.value);
+const showInvalidIcon = computed(() => {
+  return !isEmailValid.value && email.value.length > 0;
+});
 </script>
 
 <template>
@@ -21,8 +40,9 @@
           </p>
           <div class="mt-8">
             <a
-              href="https://wa.me/5567981376840" target="_blank" rel="noopener noreferrer"  
-              class="inline-block bg-gold text-black font-bold py-3 px-8 rounded-lg text-lg transition-all duration-300 ease-in-out hover:scale-105"
+              href="#" target="_blank"
+              rel="noopener noreferrer"
+              class="inline-block bg-[#B08D57] text-black font-bold py-3 px-8 rounded-lg text-lg transition-all duration-300 ease-in-out hover:scale-105"
             >
               Iniciar Conversa via WhatsApp
             </a>
@@ -30,7 +50,10 @@
         </div>
 
         <div>
-          <form name="contato" data-netlify="true" data-netlify-honeypot="bot-field">
+          <form name="contato" 
+            action="/obrigado" data-netlify="true" 
+            data-netlify-honeypot="bot-field" 
+            class="space-y-6">
             
             <p class="hidden">
               <label>
@@ -44,21 +67,66 @@
                      class="mt-1 block w-full bg-gray-800 border border-gray-700 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-gold">
             </div>
 
-            <div class="mt-6">
-              <label for="contato" class="block text-sm font-medium text-gray-300">Seu E-mail ou Telefone</label>
-              <input type="text" id="contato" name="contato"
-                     class="mt-1 block w-full bg-gray-800 border border-gray-700 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-gold">
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-300">Seu E-mail <span class="text-gray-500">(Opcional)</span></label>
+              <div class="relative mt-1">
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email"
+                  v-model="email" 
+                  placeholder="seuemail@dominio.com"
+                  class="block w-full bg-gray-800 border border-gray-700 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-gold pr-10"
+                >
+                <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                  <vue-feather 
+                    v-if="showValidIcon"
+                    type="check"
+                    size="20"
+                    class="text-green-500"
+                  ></vue-feather>
+                  <vue-feather 
+                    v-if="showInvalidIcon"
+                    type="x"
+                    size="20"
+                    class="text-red-500"
+                  ></vue-feather>
+                </div>
+              </div>
             </div>
 
-            <div class="mt-6">
+            <div>
+              <label for="telefone" class="block text-sm font-medium text-gray-300">Seu Telefone <span class="text-gray-500">(Opcional)</span></label>
+              <input 
+                type="tel" 
+                id="telefone"
+                name="telefone"
+                v-model="telefone"
+                v-mask="'(##) #####-####'"
+                placeholder="(xx) xxxxx-xxxx"
+                maxlength="15" 
+                class="mt-1 block w-full bg-gray-800 border border-gray-700 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-gold"
+              />
+            </div>
+
+            <div>
               <label for="mensagem" class="block text-sm font-bold text-gray-300">Descreva seu caso e eu retornarei com uma estratégia para a solução</label>
-              <textarea id="mensagem" name="mensagem" rows="5" required
-                        class="mt-1 block w-full bg-gray-800 border border-gray-700 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-gold"></textarea>
+              <textarea 
+                id="mensagem" 
+                name="mensagem" 
+                rows="5" 
+                required
+                :maxlength="maxMensagemLength"
+                v-model="mensagem" class="mt-1 block w-full bg-gray-800 border border-gray-700 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-gold"
+              ></textarea>
+              <div class="mt-2 text-right text-sm text-gray-500">
+                {{ mensagem.length }} / {{ maxMensagemLength }}
+              </div>
             </div>
 
-            <div class="mt-6">
+            <div>
               <button type="submit"
-                      class="w-full bg-gold text-black font-bold py-3 px-6 rounded-lg text-lg transition-all duration-300 ease-in-out hover:scale-105">
+                      class="w-full bg-[#B08D57] text-black font-bold py-3 px-6 rounded-lg text-lg transition-all duration-300 ease-in-out hover:scale-105">
                 Enviar para Análise
               </button>
             </div>
