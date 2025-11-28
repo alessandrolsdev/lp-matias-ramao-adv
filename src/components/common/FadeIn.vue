@@ -1,34 +1,3 @@
-<script setup lang="ts">
-import { ref } from 'vue';
-import { useIntersectionObserver } from '@vueuse/core';
-
-// 1. 'target' é o <div> que vamos observar.
-const target = ref(null);
-
-// 2. 'isVisible' controla a *classe* que vamos adicionar. Começa como 'false'.
-const isVisible = ref(false);
-
-// 3. O observador do VueUse.
-const { stop } = useIntersectionObserver(
-  target,
-  // 4. Callback: quando o 'target' interceptar...
-  ([{ isIntersecting }]) => {
-    if (isIntersecting) {
-      // 5. ...marcamos como visível e paramos de observar.
-      isVisible.value = true;
-      stop();
-    }
-  },
-  // 6. Dispara quando 10% do elemento estiver na tela.
-  { threshold: 0.1 }
-);
-</script>
-
-<template>
-  <div
-    ref="target"
-    class="fade-in-section"
-    :class="{ 'is-visible': isVisible }"
   >
     <slot />
   </div>

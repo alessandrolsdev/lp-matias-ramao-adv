@@ -1,14 +1,3 @@
-<script setup lang="ts">
-// Importa a imagem do Matias que será usada no fundo ou ao lado do texto.
-import matiasHeroImage from '../assets/images/matias-hero.jpg';
-import VueFeather from 'vue-feather'; 
-</script>
-
-<template>
-  <section class="w-full bg-black text-white min-h-screen relative overflow-hidden">
-    <div class="absolute inset-0 bg-black opacity-70 z-0"></div>
-
-    <div class="container mx-auto px-4 h-full relative z-10 flex items-center py-24 sm:py-32 md:py-0">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center w-full">
         <div class="text-center md:text-left">
           <div class="flex justify-center md:justify-start mb-6"> 

@@ -1,3 +1,4 @@
+/* Diretivas do Tailwind CSS para injetar os estilos base, de componentes e utilitários */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

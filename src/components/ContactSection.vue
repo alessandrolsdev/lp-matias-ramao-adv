@@ -1,35 +1,3 @@
-<script setup lang="ts">
-// Lógica de formulário e validação (como estava)
-import { ref, computed } from 'vue';
-// import { MaskInput } from 'vue-3-mask'; // Mantendo a biblioteca que funcionou por último
-// Importamos a diretiva v-mask correta
-import VMask from '@ssibrahimbas/v-mask'; // Assumindo que você voltou para esta biblioteca
-import VueFeather from 'vue-feather';
-const telefone = ref('');
-const email = ref('');
-const mensagem = ref('');
-const maxMensagemLength = 1000;
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const isEmailValid = computed(() => emailRegex.test(email.value));
-const showValidIcon = computed(() => isEmailValid.value);
-const showInvalidIcon = computed(() => !isEmailValid.value && email.value.length > 0);
-
-// Lógica de animação (como estava)
-import { useIntersectionObserver } from '@vueuse/core';
-const sectionRef = ref(null);
-const isVisible = ref(false);
-const { stop } = useIntersectionObserver(
-  sectionRef, ([{ isIntersecting }]) => {
-    if (isIntersecting) { isVisible.value = true; stop(); }
-  }, { threshold: 0.2 } // Ajuste do threshold
-);
-</script>
-
-<template>
-  <section
-    id="contato"
-    ref="sectionRef"
-    :class="{ 'is-visible': isVisible }"
     class="w-full bg-black text-white py-16 md:py-24"
   >
     <div class="container mx-auto px-4">

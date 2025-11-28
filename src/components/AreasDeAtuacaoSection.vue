@@ -1,27 +1,3 @@
-<script setup lang="ts">
-import { ref } from 'vue';
-import { useIntersectionObserver } from '@vueuse/core';
-
-const sectionRef = ref(null);
-const isVisible = ref(false);
-
-const { stop } = useIntersectionObserver(
-  sectionRef,
-  ([{ isIntersecting }]) => {
-    if (isIntersecting) {
-      isVisible.value = true;
-      stop();
-    }
-  },
-  { threshold: 0.2 } // Ajustado para 20%
-);
-</script>
-
-<template>
-  <section
-    ref="sectionRef"
-    :class="{ 'is-visible': isVisible }"
-    class="w-full bg-gray-900 text-white py-16 md:py-24"
   >
     <div class="container mx-auto px-4">
       <div class="text-center max-w-3xl mx-auto title-block">

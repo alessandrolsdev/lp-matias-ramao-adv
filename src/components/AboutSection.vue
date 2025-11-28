@@ -1,31 +1,3 @@
-<script setup lang="ts">
-// Importamos a foto de perfil
-import matiasProfileImage from '../assets/images/matias-perfil.jpg'; // <-- Verifique se o nome do arquivo está correto!
-
-// Importamos a lógica de animação
-import { ref } from 'vue';
-import { useIntersectionObserver } from '@vueuse/core';
-
-const sectionRef = ref(null);
-const isVisible = ref(false);
-
-const { stop } = useIntersectionObserver(
-  sectionRef,
-  ([{ isIntersecting }]) => {
-    if (isIntersecting) {
-      isVisible.value = true; 
-      stop(); 
-    }
-  },
-  { threshold: 0.1 }
-);
-</script>
-
-<template>
-  <section
-    ref="sectionRef"
-    :class="{ 'is-visible': isVisible }"
-    class="w-full bg-gray-900 text-white py-16 md:py-24 relative z-20"
   >
     <div class="container mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">

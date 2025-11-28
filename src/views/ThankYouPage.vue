@@ -1,10 +1,15 @@
 <script setup lang="ts">
+/**
+ * View da Página de Agradecimento.
+ * Exibida após o envio bem-sucedido do formulário de contato.
+ */
 // Importamos o componente de ícones (se você já não o tinha)
 import VueFeather from 'vue-feather';
 </script>
 
 <template>
   <div class="min-h-screen bg-black text-white flex flex-col items-center justify-center text-center px-4">
+    <!-- Ícone de sucesso -->
     <VueFeather type="check-circle" size="64" class="text-green-500 mb-6"></VueFeather>
 
     <h1 class="text-4xl font-bold text-gold mb-4">Mensagem Enviada com Sucesso!</h1>
@@ -12,6 +17,7 @@ import VueFeather from 'vue-feather';
       Obrigado por entrar em contato. Analisarei seu caso com atenção e retornarei o mais breve possível, geralmente em até 24 horas úteis.
     </p>
 
+    <!-- Botão para voltar à home -->
     <div class="mb-8"> <router-link
         to="/"
         class="inline-block bg-[#B08D57] text-black font-bold py-3 px-8 rounded-lg text-lg transition-all duration-300 ease-in-out hover:scale-105"
@@ -20,6 +26,7 @@ import VueFeather from 'vue-feather';
       </router-link>
     </div>
 
+    <!-- Links sociais -->
     <div class="flex gap-6">
       <a
         href="https://www.instagram.com/matiasramao" target="_blank"
