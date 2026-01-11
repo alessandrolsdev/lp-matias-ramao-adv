@@ -1,3 +1,23 @@
+<script setup lang="ts">
+/**
+ * Componente da Seção Hero (Topo da Landing Page).
+ * 
+ * Este componente exibe o cabeçalho principal da página com:
+ * - Título e subtítulo destacando a proposta de valor
+ * - Chamada para ação (CTA) com link para WhatsApp
+ * - Imagem do advogado palestrando
+ * - Design responsivo que se adapta a diferentes tamanhos de tela
+ * 
+ * @component
+ */
+import VueFeather from 'vue-feather';
+import matiasHeroImage from '../assets/images/matias-hero.jpg';
+</script>
+
+<template>
+  <!-- Seção Hero: Primeira impressão, destaque principal -->
+  <section class="relative w-full bg-black text-white py-16 md:py-24">
+    <div class="container mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center w-full">
         <div class="text-center md:text-left">
           <div class="flex justify-center md:justify-start mb-6"> 

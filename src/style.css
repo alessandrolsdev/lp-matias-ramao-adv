@@ -1,4 +1,21 @@
-/* Diretivas do Tailwind CSS para injetar os estilos base, de componentes e utilitários */
+/**
+ * Arquivo Principal de Estilos
+ * 
+ * IMPORTANTE: @import deve vir ANTES de qualquer outra declaração CSS.
+ * Por isso, a importação das animações está no topo do arquivo.
+ */
+
+/* Importação das animações customizadas centralizadas */
+@import './styles/animations.css';
+
+/**
+ * Diretivas do Tailwind CSS
+ * 
+ * Tailwind CSS utiliza três camadas principais:
+ * - @tailwind base: Reset CSS e estilos base
+ * - @tailwind components: Classes de componentes customizadas
+ * - @tailwind utilities: Classes utilitárias (flex, grid, cores, etc)
+ */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

@@ -1,3 +1,74 @@
+<script setup lang="ts">
+/**
+ * Componente da Seção de Contato.
+ * 
+ * Esta seção oferece duas formas de contato com o advogado:
+ * 1. Link direto para WhatsApp (mais rápido)
+ * 2. Formulário de contato detalhado (integrado com Netlify Forms)
+ * 
+ * Funcionalidades implementadas:
+ * - Validação visual de email em tempo real (ícones verde/vermelho)
+ * - Contador de caracteres com limite para a mensagem
+ * - Máscara de telefone brasileiro
+ * - Honeypot para proteção contra spam
+ * - Animações de entrada ao scrollar
+ * 
+ * @component
+ */
+import { ref, computed, onMounted } from 'vue';
+import VueFeather from 'vue-feather';
+import { useIntersectionObserver } from '../composables/useIntersectionObserver';
+
+/**
+ * Estado do campo de email digitado pelo usuário
+ */
+const email = ref('');
+
+/**
+ * Estado do campo de telefone (com máscara aplicada)
+ */
+const telefone = ref('');
+
+/**
+ * Estado do campo de mensagem
+ */
+const mensagem = ref('');
+
+/**
+ * Limite máximo de caracteres para a mensagem
+ */
+const maxMensagemLength = 500;
+
+/**
+ * Expressão regular para validação básica de email
+ */
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+/**
+ * Computed: Indica se deve mostrar o ícone de validação verde (email válido)
+ * @returns {boolean} True se o email for válido e tiver pelo menos 3 caracteres
+ */
+const showValidIcon = computed(() => {
+  return email.value.length > 0 && emailRegex.test(email.value);
+});
+
+/**
+ * Computed: Indica se deve mostrar o ícone de validação vermelho (email inválido)
+ * @returns {boolean} True se o email tiver caracteres mas for inválido
+ */
+const showInvalidIcon = computed(() => {
+  return email.value.length > 0 && !emailRegex.test(email.value);
+});
+
+onMounted(() => {
+  useIntersectionObserver('#contato');
+});
+</script>
+
+<template>
+  <!-- Seção de Contato: Formulário e link direto para WhatsApp -->
+  <section 
+    id="contato"
     class="w-full bg-black text-white py-16 md:py-24"
   >
     <div class="container mx-auto px-4">
@@ -16,7 +87,7 @@
             Clique no botão abaixo para iniciar uma conversa diretamente pelo WhatsApp...
           </p>
           <div class="mt-8">
-            <a href="#" target="_blank" rel="noopener noreferrer" class="inline-block bg-[#B08D57] text-black font-bold py-3 px-8 rounded-lg text-lg transition-all duration-300 ease-in-out hover:scale-105">
+            <a href="https://wa.me/5567981376840" target="_blank" rel="noopener noreferrer" class="inline-block bg-[#B08D57] text-black font-bold py-3 px-8 rounded-lg text-lg transition-all duration-300 ease-in-out hover:scale-105">
               Iniciar Conversa via WhatsApp
             </a>
           </div>
@@ -73,11 +144,12 @@
 </template>
 
 <style scoped>
-/* As animações (title-block, left-col, right-col) continuam as mesmas */
-.title-block { opacity: 0; transform: translateY(30px); transition: all 0.7s cubic-bezier(0.25, 0.8, 0.25, 1); }
-.is-visible .title-block { opacity: 1; transform: translateY(0); }
-.left-col { opacity: 0; transform: translateX(-50px); transition: all 0.9s cubic-bezier(0.25, 0.8, 0.25, 1); transition-delay: 300ms; }
-.is-visible .left-col { opacity: 1; transform: translateX(0); }
-.right-col { opacity: 0; transform: translateX(50px); transition: all 0.9s cubic-bezier(0.25, 0.8, 0.25, 1); transition-delay: 450ms; }
-.is-visible .right-col { opacity: 1; transform: translateX(0); }
+/**
+ * Estilos da seção de Contato.
+ * 
+ * Todas as animações (title-block, left-col, right-col) estão
+ * centralizadas em src/styles/animations.css.
+ * 
+ * Esta seção não possui estilos customizados únicos.
+ */
 </style>

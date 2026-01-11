@@ -1,9 +1,21 @@
 <script setup lang="ts">
 /**
  * View da Página de Agradecimento.
- * Exibida após o envio bem-sucedido do formulário de contato.
+ * 
+ * Esta página é exibida após o envio bem-sucedido do formulário de contato.
+ * Rota: /obrigado
+ * 
+ * Funcionalidades:
+ * - Mensagem de confirmação com ícone de sucesso
+ * - Informação sobre prazo de resposta (24 horas úteis)
+ * - Botão para retornar à página inicial
+ * - Links para redes sociais (Instagram e LinkedIn)
+ * 
+ * A página é configurada como action do formulário Netlify Forms
+ * no ContactSection.vue.
+ * 
+ * @component
  */
-// Importamos o componente de ícones (se você já não o tinha)
 import VueFeather from 'vue-feather';
 </script>
 

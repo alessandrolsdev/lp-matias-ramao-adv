@@ -1,3 +1,30 @@
+<script setup lang="ts">
+/**
+ * Componente da Seção Diferenciais.
+ * 
+ * Esta seção destaca os principais diferenciais do serviço:
+ * - Visão 360° (Direito + Negócios)
+ * - Advocacia Estratégica (consultoria preventiva e reparação justa)
+ * - Comunicação Clara (tradução do "juridiquês")
+ * 
+ * Utiliza cards com animações staggered (escalonadas) ao scrollar para 
+ * criar um efeito visual profissional e moderno.
+ * 
+ * @component
+ */
+import { onMounted } from 'vue';
+import { useIntersectionObserver } from '../composables/useIntersectionObserver';
+
+onMounted(() => {
+  useIntersectionObserver('#diferenciais');
+});
+</script>
+
+<template>
+  <!-- Seção Diferenciais: Destacando a proposta única de valor -->
+  <section 
+    id="diferenciais"
+    class="relative w-full bg-black text-white py-16 md:py-24"
   >
     <div class="container mx-auto px-4 text-center">
       <div class="title-block">
@@ -34,47 +61,27 @@
 </template>
 
 <style scoped>
-/* Bloco do Título (Animação de Entrada) */
-.title-block {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.7s cubic-bezier(0.25, 0.8, 0.25, 1), 
-              transform 0.7s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-.is-visible .title-block {
-  opacity: 1;
-  transform: translateY(0);
-}
+/**
+ * Estilos da seção Diferenciais.
+ * 
+ * Todas as animações (title-block, card-item e suas transições)  
+ * estão centralizadas em src/styles/animations.css.
+ * 
+ * Os atrasos staggered (escalonados) para cada card são aplicados
+ * através das pseudo-classes nth-child definidas abaixo.
+ */
 
-/* Cards (Animação de Entrada E Hover com Definições Explícitas) */
-.card-item {
-  opacity: 0;
-  transform: translateY(50px) scale(1); /* Estado inicial: Fora e tamanho normal */
-  transform-origin: center center;
-  /* Transições: Opacidade e Transform (entrada 0.6s), Borda e Sombra (hover 0.2s) */
-  transition: opacity 0.6s cubic-bezier(0.25, 0.8, 0.25, 1), 
-              transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1), 
-              border-color 0.2s ease-in-out, 
-              box-shadow 0.2s ease-in-out;
-  will-change: transform, opacity;
+/**
+ * Atrasos staggered para entrada dos cards.
+ * Cada card aparece com 150ms de diferença, criando efeito cascata.
+ */
+.is-visible .card-item:nth-child(1) {
+  transition-delay: 300ms;
 }
-.is-visible .card-item {
-  opacity: 1;
-  transform: translateY(0) scale(1); /* Estado final da entrada: Dentro e tamanho normal */
+.is-visible .card-item:nth-child(2) {
+  transition-delay: 450ms;
 }
-
-/* ESTADO HOVER EXPLÍCITO */
-.is-visible .card-item:hover {
-   /* Aplica o scale E MANTÉM o translateY(0) para não saltar */
-  transform: translateY(0) scale(1.05); 
-  /* Define a transição RÁPIDA APENAS para o transform no hover */
-  transition: transform 0.2s ease-in-out, 
-              border-color 0.2s ease-in-out, 
-              box-shadow 0.2s ease-in-out;
+.is-visible .card-item:nth-child(3) {
+  transition-delay: 600ms;
 }
-
-/* Staggering (Atrasos para a entrada) */
-.is-visible .card-item:nth-child(1) { transition-delay: 300ms; }
-.is-visible .card-item:nth-child(2) { transition-delay: 450ms; }
-.is-visible .card-item:nth-child(3) { transition-delay: 600ms; }
 </style>

@@ -1,3 +1,33 @@
+<script setup lang="ts">
+/**
+ * Componente da Seção Sobre (About).
+ * 
+ * Esta seção apresenta a jornada pessoal e profissional do advogado:
+ * - Foto de perfil profissional
+ * - História de superação e valores
+ * - Formação acadêmica e experiência profissional
+ * - Animações de entrada ao scrollar (fade-in lateral)
+ * 
+ * @component
+ */
+import { onMounted } from 'vue';
+import matiasProfileImage from '../assets/images/matias-perfil.jpg';
+import { useIntersectionObserver } from '../composables/useIntersectionObserver';
+
+/**
+ * Ao montar o componente, ativa o observador de interseção
+ * para animar os elementos quando entrarem na viewport.
+ */
+onMounted(() => {
+  useIntersectionObserver('#sobre');
+});
+</script>
+
+<template>
+  <!-- Seção Sobre: Apresentação da trajetória profissional -->
+  <section 
+    id="sobre"
+    class="relative w-full bg-black text-white py-16 md:py-24"
   >
     <div class="container mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -29,27 +59,17 @@
 </template>
 
 <style scoped>
-/* As animações de entrada (fade-in) */
-.image-col {
-  opacity: 0;
-  transform: translateX(-50px);
-  transition: all 0.9s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
+/**
+ * Estilos específicos da seção Sobre.
+ * 
+ * As animações de entrada (image-col) estão centralizadas em src/styles/animations.css.
+ * Este arquivo contém apenas estilos únicos desta seção.
+ */
 
-.text-col {
-  opacity: 0;
-  transform: translateX(50px);
-  transition: all 0.9s cubic-bezier(0.25, 0.8, 0.25, 1);
-  transition-delay: 200ms; 
-}
-
-.is-visible .image-col,
-.is-visible .text-col {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* O "Padrão Ouro": Face Dourada, Borda Preta */
+/**
+ * Efeito de texto dourado com contorno preto ("Padrão Ouro").
+ * Cria profundidade visual no título da seção.
+ */
 .text-shadow-custom {
   color: #B08D57;
   -webkit-text-stroke-width: 1px;

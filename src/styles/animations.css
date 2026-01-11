@@ -1,0 +1,132 @@
+/**
+ * Arquivo Centralizado de Animações CSS
+ * 
+ * Este arquivo contém todas as animações reutilizáveis da landing page.
+ * Concentrar as animações em um único local facilita:
+ * - Manutenção (atualizar em um só lugar)
+ * - Consistência visual (mesmas animações em todos os componentes)
+ * - Performance (código não duplicado reduz tamanho do bundle)
+ * 
+ * Animações incluídas:
+ * 1. title-block: Fade-in com movimento vertical para títulos de seção
+ * 2. card-item: Fade-in com movimento vertical e hover scale para cards
+ * 3. left-col/right-col: Fade-in com movimento horizontal para colunas
+ */
+
+/* ==========================================================================
+   Animação para Títulos de Seção
+   ========================================================================== */
+
+/**
+ * Estado inicial do título: invisível e deslocado para baixo.
+ */
+.title-block {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s cubic-bezier(0.25, 0.8, 0.25, 1),
+    transform 0.7s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/**
+ * Estado final do título: visível e na posição original.
+ * Ativado quando a classe 'is-visible' é adicionada via JavaScript.
+ */
+.is-visible .title-block {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   Animação para Cards com Hover Scale
+   ========================================================================== */
+
+/**
+ * Estado inicial do card: invisível, deslocado para baixo, tamanho normal.
+ */
+.card-item {
+  opacity: 0;
+  transform: translateY(50px) scale(1);
+  transform-origin: center center;
+  transition: opacity 0.6s cubic-bezier(0.25, 0.8, 0.25, 1),
+    transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1),
+    border-color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
+  will-change: transform, opacity;
+}
+
+/**
+ * Estado final do card (entrada): visível e na posição original.
+ */
+.is-visible .card-item {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/**
+ * Estado hover do card: escala aumentada mantendo posição vertical.
+ * Transição rápida apenas para o transform no hover.
+ */
+.is-visible .card-item:hover {
+  transform: translateY(0) scale(1.05);
+  transition: transform 0.2s ease-in-out,
+    border-color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
+}
+
+/* ==========================================================================
+   Animação para Colunas (Entrada Lateral)
+   ========================================================================== */
+
+/**
+ * Coluna esquerda: Estado inicial invisível e deslocada para a esquerda.
+ */
+.left-col {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.9s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-delay: 300ms;
+}
+
+/**
+ * Coluna esquerda: Estado final visível e na posição original.
+ */
+.is-visible .left-col {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/**
+ * Coluna direita: Estado inicial invisível e deslocada para a direita.
+ */
+.right-col {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.9s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-delay: 450ms;
+}
+
+/**
+ * Coluna direita: Estado final visível e na posição original.
+ */
+.is-visible .right-col {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/**
+ * Coluna de imagem: Estado inicial invisível e deslocada para a esquerda.
+ * Usada especificamente na seção About.
+ */
+.image-col {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.9s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/**
+ * Coluna de imagem: Estado final visível e na posição original.
+ */
+.is-visible .image-col {
+  opacity: 1;
+  transform: translateX(0);
+}
