@@ -94,8 +94,9 @@ onMounted(() => {
         </div>
 
         <div class="right-col">
-          <form name="contato" action="/obrigado" data-netlify="true" data-netlify-honeypot="bot-field" class="space-y-6">
+          <form name="contato" action="/obrigado" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="space-y-6">
 
+            <input type="hidden" name="form-name" value="contato" />
             <p class="hidden"><label>Não preencha: <input name="bot-field" /></label></p>
 
             <div>

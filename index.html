@@ -30,6 +30,10 @@
     <link rel="canonical" href="https://matiasramao.adv.br/" />
   </head>
   <body>
+    <form name="contato" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+      <input name="form-name" value="contato" /><input name="bot-field" />
+      <input name="nome" /><input name="email" type="email" /><input name="telefone" type="tel" /><textarea name="mensagem"></textarea>
+    </form>
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
   </body>
